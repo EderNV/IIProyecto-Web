@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=> 'admin'],function(){
+	Route::resource('user','UserControl');
+});
+
+
+Route::group(['prefix'=> 'terreno'],function(){
+	Route::resource('CRUD','TerrenoController');
+});
