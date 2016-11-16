@@ -36,13 +36,14 @@
             <input type="text" name="name" placeholder="Nombre"></div>
            <label for="correo"> Email:</label>
             <input type="email" name="correo" placeholder="Ejemplo@gmail.com"><br>
-            <label for="name"> Contraseña</label>
-            <input type="password" name="password" placeholder="Contraseña.."><br>
+            
             <label for="name"> Tipo</label>
             <select name="type" >
                  <option value="admi">Administrador</option>
                   <option value="Usuario">Usuario</option>
             </select><br>
+            <label for="name"> Contraseña</label>
+            <input type="password" name="password" placeholder="Contraseña.."><br>
             <input type="submit" value="Submit">
        
 

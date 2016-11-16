@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\User;
+//use app\User;
 use Illuminate\Http\Request;
 
 class UserControl extends Controller
@@ -35,16 +35,10 @@ class UserControl extends Controller
      */
     public function store(Request $request)
     {
-        echo($request->name);
-        echo($request->correo);
-        echo($request->type);
-        echo($request->password);
-        $usuario= new User;
-        $usuario->nombre=$request->name;
-        $usuario->email=$request->correo;
-        $usuario->type=$request->type;
-        $usuario->password=$request->password;
-       // $usuario->save();
+       
+        $usuario=new User($request->all());
+        $usuario->save();
+       
         // $user= new User($request->all());
         //$user->save();
     }
