@@ -35,11 +35,11 @@
             <label for="name"> Nombre</label>
             <input type="text" name="name" placeholder="Nombre"></div>
            <label for="correo"> Email:</label>
-            <input type="email" name="correo" placeholder="Ejemplo@gmail.com"><br>
+            <input type="email" name="email" placeholder="Ejemplo@gmail.com"><br>
             
             <label for="name"> Tipo</label>
             <select name="type" >
-                 <option value="admi">Administrador</option>
+                 <option value="admin">Administrador</option>
                   <option value="Usuario">Usuario</option>
             </select><br>
             <label for="name"> Contraseña</label>
