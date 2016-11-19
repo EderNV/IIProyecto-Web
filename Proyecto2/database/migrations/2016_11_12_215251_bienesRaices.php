@@ -13,7 +13,7 @@ class BienesRaices extends Migration
      */
     public function up()
     {
-        Schema::create('Terresnos', function (Blueprint $table) {
+        /*Schema::create('Terresnos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('banco',80);
             $table->string('nombre');
@@ -22,7 +22,7 @@ class BienesRaices extends Migration
             $table->integer('precio');
             $table->integer('dimencion');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
