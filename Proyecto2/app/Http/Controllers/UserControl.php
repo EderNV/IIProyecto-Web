@@ -14,7 +14,10 @@ class UserControl extends Controller
      */
     public function index()
     {
-        //
+
+        $Usuario= User::orderBy('id','ASC')->paginate(10);
+
+        return view ('indexUser')->with('Usuario',$Usuario);
     }
 
     /**
@@ -38,6 +41,8 @@ class UserControl extends Controller
       // dd($request->all());
         $usuario=new User($request->all());        
         $usuario->save();
+
+        
        
         // $user= new User($request->all());
         //$user->save();

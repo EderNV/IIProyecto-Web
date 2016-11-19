@@ -7,51 +7,56 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+        <link rel="stylesheet"  href="{{ URL::asset('boostrap/css/bootstrap.css') }}">
 
         <title>Create User</title>
 
         <!-- Fonts -->
         
-
-     
-        
     </head>
     <body>
-       <nav class="navbar navbar-inverse navbar-fixed-top">
-  		<div class="container-fluid">
-    		
-	</nav>
+       
         
-        	<div class="container
-				col-xs-12
-				col-sm-10 col-sm-offset-1 
-				col-md-8 col-md-offset-2" >
+      <div class="container" >
        <h1>Creador</h1>
        <div class="form-group">
        
-        <form method="POST" action="{{action('UserControl@store')}}" >
+       
+       
+        <form class="form-horizontal" method="POST" action="{{action('UserControl@store')}}" >
            {{ csrf_field() }}
            <div class="form-group">
-            <label for="name"> Nombre</label>
-            <input type="text" name="name" placeholder="Nombre"></div>
-           <label for="correo"> Email:</label>
-            <input type="email" name="email" placeholder="Ejemplo@gmail.com"><br>
-            
-            <label for="name"> Tipo</label>
-            <select name="type" >
+            <label class="col-sm-2 control-label" for="name"> Nombre</label>
+            <div class="col-sm-10">
+            <input class="form-control type="text" name="name" placeholder="Nombre"></div></div>
+            <div class="form-group">
+           <label class="col-sm-2 control-label" for="correo"> Email:</label>
+           <div class="col-sm-10">
+            <input class="form-control type="email" name="email" placeholder="Ejemplo@gmail.com"><br></div></div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label" for="name"> Tipo</label>
+            <div class="col-sm-10">
+            <select class="selectpicker" name="type" >
                  <option value="admin">Administrador</option>
-                  <option value="Usuario">Usuario</option>
-            </select><br>
-            <label for="name"> Contraseña</label>
-            <input type="password" name="password" placeholder="Contraseña.."><br>
-            <input type="submit" value="Submit">
+                  <option value="usuario">Usuario</option>
+            </select><br></div></div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label" for="name"> Contraseña</label>
+            <div class="col-sm-10">
+            <input class="form-control type="password" name="password" placeholder="Contraseña.."><br></div></div>
+            <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
        
 
             
         </form>
         </div>
         </div>
-        <script src="bootstrap.js"></script>
+     
         
     </body>
 </html>
