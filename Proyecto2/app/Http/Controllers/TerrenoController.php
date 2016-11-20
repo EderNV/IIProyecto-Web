@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\TerrenosModel;
 
 class TerrenoController extends Controller
 {
@@ -80,5 +81,17 @@ class TerrenoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+
+    public function view($id)
+    {
+        //$terreno = TerrenosModel::find($id);
+        //dd($terreno);
+
+        $terrenos = TerrenosModel::all();
+
+        return view('terrenos.index', ['listaTerrenos' => $terrenos]);
     }
 }

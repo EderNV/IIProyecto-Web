@@ -27,3 +27,13 @@ Route::get('user/{id}/destroy',['uses'=>'UserControl@destroy',
 Route::group(['prefix'=> 'terreno'],function(){
 	Route::resource('CRUD','TerrenoController');
 });
+
+
+Route:: group(['prefix' => 'terrenos'], function(){
+	
+	Route::get('view/{id}', [
+		'uses' 	=> 'TerrenoController@view',
+		'as'	=> 'terrenosView'
+	]);
+
+});
