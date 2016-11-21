@@ -19,8 +19,9 @@ Route::group(['prefix'=> 'admin'],function(){
 	Route::resource('user','UserControl');
 
 
-Route::get('user/{id}/destroy',['uses'=>'UserControl@destroy',
-	'as'=> 'admin.user.destroy'
+	Route::get('user/{id}/destroy',[
+		'uses'=>'UserControl@destroy',
+		'as'=> 'admin.user.destroy'
 	]);
 });
 
@@ -29,7 +30,8 @@ Route::group(['prefix'=> 'terreno'],function(){
 });
 
 
-Route:: group(['prefix' => 'terrenos'], function(){
+Route::group(['prefix' => 'terrenos'], function(){
+	Route::resource('', 'TerrenoController');
 	
 	Route::get('view/{id}', [
 		'uses' 	=> 'TerrenoController@view',
@@ -37,3 +39,6 @@ Route:: group(['prefix' => 'terrenos'], function(){
 	]);
 
 });
+
+
+	Route::resource('propiedades', 'PropiedadController');

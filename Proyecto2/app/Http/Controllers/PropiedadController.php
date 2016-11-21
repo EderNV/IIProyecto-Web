@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TerrenosModel;
+use App\Propiedad;
 
-class TerrenoController extends Controller
+class PropiedadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,10 @@ class TerrenoController extends Controller
      */
     public function index()
     {
-        $terreno = TerrenosModel::orderBy('id', 'ASC')->paginate(10);
-        return view('terrenos.index')->with('terreno', $terreno);
+        //$terrenos = Propiedad::orderBy('id', 'ASC')->paginate(1);
+        //return view('terrenos.index')->with('terrenos', $terrenos);
+        $terrenos = Propiedad::all();
+        return view('terrenos.index', ['terrenos' => $terrenos]);
     }
 
     /**
@@ -37,8 +39,9 @@ class TerrenoController extends Controller
     public function store(Request $request)
     {
         //dd($request.ubicacion);
-        $terreno = new TerrenosModel($request->all());        
+        $terreno = new Propiedad($request->all());        
         $terreno->save();
+        return view('terrenos.create');
     }
 
     /**
@@ -90,10 +93,10 @@ class TerrenoController extends Controller
 
     public function view($id)
     {
-        //$terreno = TerrenosModel::find($id);
+        //$terreno = Propiedad::find($id);
         //dd($terreno);
 
-        $terrenos = TerrenosModel::all();
+        $terrenos = Propiedad::all();
 
         return view('terrenos.index', ['listaTerrenos' => $terrenos]);
     }

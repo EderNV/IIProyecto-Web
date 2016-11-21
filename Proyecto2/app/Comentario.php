@@ -11,7 +11,7 @@ class Comentario extends Model
     protected $fillable = ['id_terreno', 'id_usuario', 'texto'];
 
     public function terreno() {
-    	return $this->belongsTo('App\TerrenosModel');
+    	return $this->belongsTo('App\Propiedad');
     }
 
     public function user() {
