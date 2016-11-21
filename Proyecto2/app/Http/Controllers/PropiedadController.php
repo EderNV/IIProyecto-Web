@@ -21,6 +21,12 @@ class PropiedadController extends Controller
         return view('terrenos.index', ['terrenos' => $terrenos]);
     }
 
+    public function filtros(Request $request)
+    {
+        //
+      //  $terrenos = Propiedad::all();
+       // return view('terrenos.index', ['terrenos' => $terrenos]);
+    }
     /**
      * Show the form for creating a new resource.
      *

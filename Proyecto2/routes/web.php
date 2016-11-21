@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
 
 Route::group(['prefix'=> 'admin'],function(){
@@ -42,6 +42,10 @@ Route::group(['prefix' => 'terrenos'], function(){
 
 
 Route::resource('propiedades', 'PropiedadController');
+Route::post('filtro', [
+		'uses' 	=> 'PropiedadController@filtros',
+		'as'	=> 'filtros'
+	]);
 
 Route::get('propiedades/{id}/destroy', [
 	'uses' 	=> 'PropiedadController@destroy',

@@ -58,12 +58,13 @@
 
 <div class="container">
   <div class="form-group">
-    <form class="form-horizontal" action="" method="get">
+    <form class="form-horizontal" method="POST" action="{{action('PropiedadController@filtros')}}" >
+      {{ csrf_field() }}
             
                <div class="form-group">
             <label class="col-sm-2 control-label" for="name"> Provincia</label>
             <div class="col-sm-10">
-            <select class="form-control" name="type" >
+            <select class="form-control" name="ubicacion" >
                  <option value="Alajuela">Alajuela</option>
                   <option value="Sj">San Jose</option>
                   <option value="h">Heredia</option>
