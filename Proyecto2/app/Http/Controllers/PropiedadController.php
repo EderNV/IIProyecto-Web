@@ -99,7 +99,10 @@ class PropiedadController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $propiedad = Propiedad::find($id);
+        $propiedad->delete();
+
+        Flash::warning('La propiedad . {{ $propiedad->nombre}} . ha sido eliminada de manera exitosa');
     }
 
 

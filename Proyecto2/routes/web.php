@@ -41,4 +41,9 @@ Route::group(['prefix' => 'terrenos'], function(){
 });
 
 
-	Route::resource('propiedades', 'PropiedadController');
+Route::resource('propiedades', 'PropiedadController');
+
+Route::get('propiedades/{id}/destroy', [
+	'uses' 	=> 'PropiedadController@destroy',
+	'as'	=> 'propiedades.destroy'
+]);

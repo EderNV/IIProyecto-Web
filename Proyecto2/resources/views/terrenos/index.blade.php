@@ -23,7 +23,7 @@
 
 				<a href="{{ route('propiedades.edit', $terreno->id) }}" class="btn btn-warning">Editar</a>
 
-				<a href="{{ route('propiedades.destroy', $terreno->id) }}" class="btn btn-danger">Eliminar</a>
+				<a href="{{ route('propiedades.destroy', $terreno->id) }}" onclick="return confirm('¿Seguro que desea eliminar la propiedad {{ $terreno->nombre }}')" class="btn btn-danger">Eliminar</a>
 		        
 			</div>
 			
