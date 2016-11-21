@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Propiedad;
+use Laracasts\Flash\Flash;
 
 class PropiedadController extends Controller
 {
@@ -103,6 +104,7 @@ class PropiedadController extends Controller
         $propiedad->delete();
 
         Flash::warning('La propiedad . {{ $propiedad->nombre}} . ha sido eliminada de manera exitosa');
+        return redirect()->route('propiedades.index');
     }
 
 
