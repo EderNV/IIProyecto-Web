@@ -1,5 +1,6 @@
 @extends('plantilla')
 
+
 @section('title', 'Crear Propiedad')
 
 @section('content')

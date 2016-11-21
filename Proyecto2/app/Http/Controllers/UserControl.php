@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
 
 class UserControl extends Controller
 {
@@ -17,7 +18,7 @@ class UserControl extends Controller
 
         $Usuario= User::orderBy('id','ASC')->paginate(10);
 
-        return view ('indexUser')->with('Usuario',$Usuario);
+        return view ('usuarios/indexUser')->with('Usuario',$Usuario);
     }
 
     /**
@@ -27,7 +28,7 @@ class UserControl extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('usuarios/create');
     }
 
     /**
@@ -42,10 +43,9 @@ class UserControl extends Controller
         $usuario=new User($request->all());        
         $usuario->save();
 
-        
-       
-        // $user= new User($request->all());
-        //$user->save();
+        flash('Usuario Agregado!!', 'success');
+        return redirect()->route('user.index');
+
     }
 
     /**
@@ -64,10 +64,12 @@ class UserControl extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     *  /
+     */
     public function edit($id)
     {
-        //
+       // dd($id);
+        $usuario= User::find($id);
+        return view('modificar')->with('user',$usuario);
     }
 
     /**
@@ -79,7 +81,7 @@ class UserControl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -90,6 +92,16 @@ class UserControl extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+       $user=User::find($id);
+       //dd($user);
+      $user->delete();
+
+      flash('El usuario ('. $user->name. ') ha sido eliminado!!!', 'danger');
+
+      return redirect()->route('user.index');
+        
     }
+
+    
 }

@@ -86,7 +86,8 @@ class PropiedadController extends Controller
         $propiedad->precio = $request->precio;
         $propiedad->foto = $request->foto;
         $propiedad->save();
-        
+
+        Flash::warning('La propiedad ' . $propiedad->name);
         return redirect()->route('propiedades.index');
     }
 
