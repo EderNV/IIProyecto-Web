@@ -18,7 +18,13 @@
 		        <p>{{ $terreno->descripcion}}</p>
 		        <strong>$ {{ $terreno->precio }}</strong>
 		        <hr></hr>
-		        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+		        
+		        <a href="{{ route('propiedades.show', $terreno->id) }}" class="btn btn-primary">Ver info</a>
+
+				<a href="{{ route('propiedades.edit', $terreno->id) }}" class="btn btn-warning">Editar</a>
+
+				<a href="{{ route('propiedades.destroy', $terreno->id) }}" class="btn btn-danger">Eliminar</a>
+		        
 			</div>
 			
 		</div>

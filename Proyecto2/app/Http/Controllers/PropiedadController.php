@@ -63,7 +63,8 @@ class PropiedadController extends Controller
      */
     public function edit($id)
     {
-        //
+        $propiedad = Propiedad::find($id);
+        return view('terrenos.edit')->with('propiedad', $propiedad);
     }
 
     /**
@@ -75,7 +76,18 @@ class PropiedadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($request->all());
+        $propiedad = Propiedad::find($id);
+        $propiedad->nombre = $request->nombre;
+        $propiedad->ubicacion = $request->ubicacion;
+        $propiedad->descripcion = $request->descripcion;
+        $propiedad->banco = $request->banco;
+        $propiedad->dimension = $request->dimension;
+        $propiedad->precio = $request->precio;
+        $propiedad->foto = $request->foto;
+        $propiedad->save();
+        
+        return redirect()->route('propiedades.index');
     }
 
     /**
