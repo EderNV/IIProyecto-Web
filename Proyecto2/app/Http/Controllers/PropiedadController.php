@@ -59,7 +59,12 @@ class PropiedadController extends Controller
      */
     public function show($id)
     {
-        //
+        $propiedad = Propiedad::find($id);
+        //dd($propiedad);
+        //return view('terrenos.show')->with('propiedad', $propiedad);
+        $comentarios = $propiedad->comentarios;
+        //dd($listacomentarios);
+        return view('terrenos.show')->with('propiedad', $propiedad)->with('comentarios', $comentarios);
     }
 
     /**

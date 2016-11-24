@@ -1,6 +1,6 @@
 @extends('plantilla')
 
-@section('title', 'Terrenos')
+@section('title', 'Propiedades')
  	
 @section('content')
 	<h1>Hola Mundo</h1>

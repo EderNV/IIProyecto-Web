@@ -42,6 +42,7 @@ Route::group(['prefix' => 'terrenos'], function(){
 
 
 Route::resource('propiedades', 'PropiedadController');
+
 Route::post('filtro', [
 		'uses' 	=> 'PropiedadController@filtros',
 		'as'	=> 'filtros',
