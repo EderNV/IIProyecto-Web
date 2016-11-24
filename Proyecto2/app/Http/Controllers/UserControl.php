@@ -11,8 +11,14 @@ class UserControl extends Controller
     /**
      * Display a listing of the resource.
      *
+
      * @return \Illuminate\Http\Response
      */
+public function __construct()
+{
+    $this->middleware('auth');
+}
+    
     public function index()
     {
 
@@ -40,7 +46,8 @@ class UserControl extends Controller
     public function store(Request $request)
     {
       // dd($request->all());
-        $usuario=new User($request->all());        
+        $usuario=new User($request->all()); 
+        $usuario->password=bcrypt($request->password);       
         $usuario->save();
 
         flash('Usuario Agregado!!', 'success');

@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">BienesCR</a>
+      <a class="navbar-brand" href="#">BienesCR.</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

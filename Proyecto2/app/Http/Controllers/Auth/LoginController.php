@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+
+    //protected $redirectTo = 'master';
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -25,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/propiedades';
 
     /**
      * Create a new controller instance.

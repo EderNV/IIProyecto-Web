@@ -12,10 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('master');
+    return view('auth/login');
 });
 
-Route::group(['prefix'=> 'admin'],function(){
+Route::group(['prefix'=> 'admin', 'middleware'=>'auth'],function(){
 	Route::resource('user','UserControl');
 
 
@@ -25,7 +25,7 @@ Route::group(['prefix'=> 'admin'],function(){
 	]);
 });
 
-Route::group(['prefix'=> 'terreno'],function(){
+/*Route::group(['prefix'=> 'terreno','middleware'=>'auth'],function(){
 	Route::resource('CRUD','TerrenoController');
 });
 
@@ -38,16 +38,20 @@ Route::group(['prefix' => 'terrenos'], function(){
 		'as'	=> 'terrenosView'
 	]);
 
-});
+});*/
 
 
 Route::resource('propiedades', 'PropiedadController');
 Route::post('filtro', [
 		'uses' 	=> 'PropiedadController@filtros',
-		'as'	=> 'filtros'
+		'as'	=> 'filtros',
+		'middleware'=>'auth'
 	]);
 
 Route::get('propiedades/{id}/destroy', [
 	'uses' 	=> 'PropiedadController@destroy',
 	'as'	=> 'propiedades.destroy'
 ]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

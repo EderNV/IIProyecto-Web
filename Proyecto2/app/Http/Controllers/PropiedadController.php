@@ -23,7 +23,7 @@ class PropiedadController extends Controller
 
     public function filtros(Request $request)
     {
-        //
+        dd($request);
       //  $terrenos = Propiedad::all();
        // return view('terrenos.index', ['terrenos' => $terrenos]);
     }
@@ -95,7 +95,7 @@ class PropiedadController extends Controller
         $propiedad->save();
 
         Flash::warning('La propiedad ' . $propiedad->name);
-        return redirect()->route('propiedades.index');
+        return redirect()->route('Crud.propiedades.index');
     }
 
     /**
