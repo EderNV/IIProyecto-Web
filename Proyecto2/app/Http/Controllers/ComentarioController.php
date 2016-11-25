@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Comentario;
 use App\Propiedad;
+
 class ComentarioController extends Controller
 {
     /**
@@ -35,14 +37,13 @@ class ComentarioController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
         $comentario = new Comentario($request->all()); 
-         //dd($comentario);     
-       $comentario->save();
-        $propiedad=Propiedad::find($request->propiedad_id);
+        $comentario->save();
+
+        $propiedad = Propiedad::find($request->propiedad_id);
+        $comentarios = $propiedad->comentarios;
        
-      // dd($propiedad);
-        return view('terrenos.index')->with('propiedad',$propiedad)->with('comentarios',$comentario);
+        return Redirect::back()->with('id', $request->propiedad_id);
     }
 
     /**

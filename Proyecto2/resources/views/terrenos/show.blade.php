@@ -31,7 +31,7 @@
 			<i>Precio</i>
 			<p><font size="5">${{ $propiedad->precio }}</font></p>
 
-	        <a href="{{ route('propiedades.show', $propiedad->id) }}" class="btn btn-primary">Ver info</a>
+	        <a href="#" class="btn btn-info">Obtener info por e-mail</a>
 			<a href="{{ route('propiedades.edit', $propiedad->id) }}" class="btn btn-warning">Editar</a>
 			<a href="{{ route('propiedades.destroy', $propiedad->id) }}" onclick="return confirm('¿Seguro que desea eliminar este elemento?')" class="btn btn-danger">Eliminar</a>
 		</div>
@@ -61,7 +61,10 @@
 
 		@foreach($comentarios as $comentario)
 			<div class="well row" style="background-color:white;">
-				<h5>{{ App\User::find($comentario->usuario_id)->name }}</h5>
+				<p>
+					<strong>{{ App\User::find($comentario->usuario_id)->name }}</strong> 
+					<small style="padding-left:5em;">{{ $comentario->created_at }}</small>
+				</p>
 				<hr/>
 				<p>{{ $comentario->texto }}</p>
 			</div>
