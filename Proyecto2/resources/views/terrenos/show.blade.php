@@ -3,6 +3,7 @@
 @section('title') {{ $propiedad->nombre }} @stop
  	
 @section('content')
+
 	<div class="well row">
 		<div class="col-sm-6 col-md-4">
 			<a href="{{ $propiedad->foto}}" class="thumbnail">
@@ -39,10 +40,10 @@
 	<div class="well row">
 
 		<p>¿Conoces esta propiedad? Compártenos tu comentario</p>
-		<form method="POST" action="" >
+		<form method="POST" action="{{ action('ComentarioController@store') }}">
         	{{ csrf_field() }}
         	<input type="hidden" name="propiedad_id" value="{{ $propiedad->id }}">﻿
-        	<input type="hidden" name="usuario_id" value="">﻿
+        	<input type="hidden" name="usuario_id" value="{{ Auth::id() }}">﻿
         	<div class="form-group">
 	        	<div class="col-xs-10 col-md-11">
 	           		<textarea class="form-control" rows="3" name="descripcion" placeholder="Escribe tu mensaje..." style="resize:vertical"></textarea>
@@ -60,7 +61,7 @@
 
 		@foreach($comentarios as $comentario)
 			<div class="well row" style="background-color:white;">
-				<h4>{{ App\User::find($comentario->usuario_id)->name }}</h4>
+				<h5>{{ App\User::find($comentario->usuario_id)->name }}</h5>
 				<hr/>
 				<p>{{ $comentario->texto }}</p>
 			</div>

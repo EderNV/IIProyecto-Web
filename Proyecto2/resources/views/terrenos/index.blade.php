@@ -4,6 +4,7 @@
  	
 @section('content')
 	<h1>Hola Mundo</h1>
+	
 	@include('flash::message')
 
 	@foreach($terrenos as $terreno)

@@ -100,7 +100,7 @@ class PropiedadController extends Controller
         $propiedad->save();
 
         Flash::warning('La propiedad ' . $propiedad->name);
-        return redirect()->route('Crud.propiedades.index');
+        return redirect()->route('propiedades.index');
     }
 
     /**
