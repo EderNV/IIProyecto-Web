@@ -20,7 +20,7 @@ class CreateComentariosTable extends Migration
             $table->string('texto', 2500);
             $table->timestamps();
 
-            $table->foreign('propiedad_id')->references('id')->on('propiedades')->onDelete('cascade');
+            //$table->foreign('propiedad_id')->references('id')->on('propiedades')->onDelete('cascade');
             $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
 
         });

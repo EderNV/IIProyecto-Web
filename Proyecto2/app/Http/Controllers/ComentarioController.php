@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comentario;
-
+use App\Propiedad;
 class ComentarioController extends Controller
 {
     /**
@@ -35,9 +35,14 @@ class ComentarioController extends Controller
      */
     public function store(Request $request)
     {
-        $comentario = new Comentario($request->all());        
-        $comentario->save();
-        return view('terrenos.show')->with('propiedad', $propiedad);
+        //dd($request);
+        $comentario = new Comentario($request->all()); 
+         //dd($comentario);     
+       $comentario->save();
+        $propiedad=Propiedad::find($request->propiedad_id);
+       
+      // dd($propiedad);
+        return view('terrenos.index')->with('propiedad',$propiedad)->with('comentarios',$comentario);
     }
 
     /**

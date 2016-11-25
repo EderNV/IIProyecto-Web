@@ -46,7 +46,7 @@
         	<input type="hidden" name="usuario_id" value="{{ Auth::id() }}">﻿
         	<div class="form-group">
 	        	<div class="col-xs-10 col-md-11">
-	           		<textarea class="form-control" rows="3" name="descripcion" placeholder="Escribe tu mensaje..." style="resize:vertical"></textarea>
+	           		<textarea class="form-control" rows="3" name="texto" placeholder="Escribe tu mensaje..." style="resize:vertical"></textarea>
 	           	</div>
 	           	<div class="col-xs-2 col-md-1">
 	      			<button type="submit" class="btn btn-primary">Comentar</button>

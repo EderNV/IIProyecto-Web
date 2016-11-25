@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::group(['prefix'=> 'admin', 'middleware'=>'auth'],function(){
+Route::group(['prefix'=> 'admin'],function(){
 	Route::resource('user','UserControl');
 
 
@@ -56,3 +56,5 @@ Route::get('propiedades/{id}/destroy', [
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('comentarios', 'ComentarioController');
