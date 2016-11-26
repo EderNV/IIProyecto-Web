@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+
+
+
 Route::group(['prefix'=> 'admin'],function(){
 	Route::resource('user','UserControl');
 
