@@ -21,6 +21,7 @@ class PropiedadController extends Controller
         return view('terrenos.index', ['terrenos' => $terrenos]);
     }
 
+    
     public function filtros(Request $request)
     {
     
