@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => 'crecicla.tec@gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => 'bienescr',
 
     /*
     |--------------------------------------------------------------------------

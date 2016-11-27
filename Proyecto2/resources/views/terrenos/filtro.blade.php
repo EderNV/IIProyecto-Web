@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('layouts.app')
 
 @section('title', 'Propiedades')
  	
@@ -19,9 +19,9 @@
 			<div class="col-sm-6 col-md-8">
 				<h3>{{ $terreno->nombre}}</h3>
 				<h4>{{ $terreno->ubicacion }}</h4>
-				<h4>{{ $terreno->dimension }} ms2</h4>
-		        <p>{{ $terreno->descripcion}}</p>
-		        <strong>$ {{ $terreno->precio }}</strong>
+		      	<p>{{ str_limit($terreno->descripcion, 200) }}</p>
+          		<h4>{{ $terreno->dimension }} m<sup>2</sup></h4>
+          		<h4><strong>$ {{ $terreno->precio }}</strong></h4>
 		        <hr></hr>
 		        <a href="{{ route('propiedades.show', $terreno->id) }}" class="btn btn-primary">Ver info</a>
 		        

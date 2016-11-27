@@ -107,7 +107,7 @@ class PropiedadController extends Controller
         $propiedad->foto = $request->foto;
         $propiedad->save();
 
-        Flash::warning('La propiedad ' . $propiedad->name);
+        Flash::warning('La propiedad ha sido modificada de manera exitosa');
         return redirect()->route('propiedades.index');
     }
 
@@ -122,7 +122,7 @@ class PropiedadController extends Controller
         $propiedad = Propiedad::find($id);
         $propiedad->delete();
 
-        Flash::warning('La propiedad . {{ $propiedad->nombre}} . ha sido eliminada de manera exitosa');
+        Flash::warning('La propiedad ha sido eliminada de manera exitosa');
         return redirect()->route('propiedades.index');
     }
 

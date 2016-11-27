@@ -1,7 +1,4 @@
-
-
-
-@extends('plantilla')
+@extends('layouts.app')
 
 @section('content')
        

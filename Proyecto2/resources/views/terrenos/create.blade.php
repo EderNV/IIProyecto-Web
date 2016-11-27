@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('layouts.app')
 
 
 @section('title', 'Crear Propiedad')
@@ -17,7 +17,16 @@
             <div class="form-group">
            		<label class="col-sm-2 control-label" for="ubicacion">Ubicación:</label>
            		<div class="col-sm-10">
-            		<input class="form-control" type="text" name="ubicacion" placeholder="Ubicación">
+                <select class="form-control" name="ubicacion" >
+                  <option value="">Seleccione una ubicación..</option>
+                  <option value="Alajuela">Alajuela</option>
+                  <option value="Cartago">Cartago</option>
+                  <option value="Guanacaste">Guanacaste</option>
+                  <option value="Heredia">Heredia</option>
+                  <option value="Limon">Limón</option>
+                  <option value="Puntarenas">Puntarenas</option>
+                  <option value="San Jose">San José</option>
+                </select>
             	</div>
             </div>
             <div class="form-group">

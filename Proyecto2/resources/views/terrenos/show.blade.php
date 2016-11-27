@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('layouts.app')
 
 @section('title') {{ $propiedad->nombre }} @stop
  	
@@ -32,8 +32,8 @@
 			<p><font size="5">${{ $propiedad->precio }}</font></p>
 
 	        <a href="{{ action('PropiedadController@send', $propiedad->id ) }}" class="btn btn-info">Obtener info por e-mail</a>
-			<a href="{{ route('propiedades.edit', $propiedad->id) }}" class="btn btn-warning">Editar</a>
-			<a href="{{ route('propiedades.destroy', $propiedad->id) }}" onclick="return confirm('¿Seguro que desea eliminar este elemento?')" class="btn btn-danger">Eliminar</a>
+	        @include('flash::message')
+			
 		</div>
 	</div>
 
@@ -62,8 +62,9 @@
 		@foreach($comentarios as $comentario)
 			<div class="well row" style="background-color:white;">
 				<p>
-					<strong>{{ App\User::find($comentario->usuario_id)->name }}</strong> 
-					<small style="padding-left:5em;">{{ $comentario->created_at }}</small>
+					<strong>{{ App\User::find($comentario->usuario_id)->name }}</strong>
+					 | 
+					<small>{{ $comentario->created_at }}</small>
 				</p>
 				<hr/>
 				<p>{{ $comentario->texto }}</p>

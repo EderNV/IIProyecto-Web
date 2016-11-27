@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('layouts.app')
 
 @section('title', 'Editar propiedad')
 
