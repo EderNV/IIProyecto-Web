@@ -36,8 +36,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{route('user.index')}}">Lista</a></li>
-            <li><a href="{{route('user.create')}}">Crear Nuevo Usuario</a></li>
+            <li><a href="{{ route('user.index') }}">Lista</a></li>
+            <li><a href="{{ route('user.create') }}">Crear Nuevo Usuario</a></li>
             
           </ul>
         </li>
@@ -45,11 +45,16 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Propiedades <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{route('propiedades.index')}}">Lista Propiedades</a></li>
-            <li><a href="{{route('propiedades.create')}}">Insertar Propiedades</a></li>
+            <li><a href="{{ route('propiedades.index') }}">Lista Propiedades</a></li>
+            <li><a href="{{ route('propiedades.create') }}">Insertar Propiedades</a></li>
             
           </ul>
         </li>
+
+        <li>
+            <a href="{{ route('contacto') }}">Contáctenos</a>
+        </li>
+
       </ul>
      
        <ul class="nav navbar-nav navbar-right">

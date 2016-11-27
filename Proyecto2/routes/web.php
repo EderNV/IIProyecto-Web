@@ -15,8 +15,19 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+Route::get('/contacto', function() {
+	return view('contacto');
+})->name('contacto');
+
+Route::get('/home', 'HomeController@index');
 
 
+
+Route::post('filtro', [
+		'uses' 	=> 'PropiedadController@filtros',
+		'as'	=> 'filtros',
+		'middleware'=>'auth'
+]);
 
 Route::group(['prefix'=> 'admin'],function(){
 	Route::resource('user','UserControl');
@@ -28,36 +39,22 @@ Route::group(['prefix'=> 'admin'],function(){
 	]);
 });
 
-/*Route::group(['prefix'=> 'terreno','middleware'=>'auth'],function(){
-	Route::resource('CRUD','TerrenoController');
-});
-
-
-Route::group(['prefix' => 'terrenos'], function(){
-	Route::resource('', 'TerrenoController');
-	
-	Route::get('view/{id}', [
-		'uses' 	=> 'TerrenoController@view',
-		'as'	=> 'terrenosView'
-	]);
-
-});*/
-
 
 Route::resource('propiedades', 'PropiedadController');
-
-Route::post('filtro', [
-		'uses' 	=> 'PropiedadController@filtros',
-		'as'	=> 'filtros',
-		'middleware'=>'auth'
-	]);
 
 Route::get('propiedades/{id}/destroy', [
 	'uses' 	=> 'PropiedadController@destroy',
 	'as'	=> 'propiedades.destroy'
 ]);
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('propiedades/{id}/send', [
+	'uses' 	=> 'PropiedadController@send',
+	'as'	=> 'propiedades.send'
+]);
 
 Route::resource('comentarios', 'ComentarioController');
+
+Route::resource('mail', 'MailController');
+
+Auth::routes();
+

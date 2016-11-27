@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Propiedad;
+use App\User;
+use Auth;
+use Mail;
 use Laracasts\Flash\Flash;
 
 class PropiedadController extends Controller
@@ -124,13 +128,25 @@ class PropiedadController extends Controller
 
 
 
-    public function view($id)
+    public function send($id)
     {
-        //$terreno = Propiedad::find($id);
-        //dd($terreno);
+        $propiedad = Propiedad::find($id);
+        $datos = array( 'nombre'        => $propiedad->nombre, 
+                        'ubicacion'     => $propiedad->ubicacion,
+                        'descripcion'   => $propiedad->descripcion,
+                        'banco'         => $propiedad->banco,
+                        'dimension'     => $propiedad->dimension,
+                        'precio'        => $propiedad->precio,
+                        'foto'          => $propiedad->foto
+                );
 
-        $terrenos = Propiedad::all();
-
-        return view('terrenos.index', ['listaTerrenos' => $terrenos]);
+        $usuario = User::find(Auth::id());
+        Mail::send('emails.estate', $datos, function($msj) {
+            $msj->subject('Información de Propiedad');
+            $msj->to(User::find(Auth::id())->email);
+        });
+        Flash::success('Mensaje enviado correctamente');
+        return Redirect::back()->with('id', $id);
+        
     }
 }

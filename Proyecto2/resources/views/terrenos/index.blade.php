@@ -11,7 +11,7 @@
   <div id="demo" class="collapse">
     	<div class="container">
   <div class="form-group">
-    <form class="form-horizontal" method="POST" action="{{action('PropiedadController@filtros')}}" >
+    <form class="form-horizontal" method="POST" action="{{ action('PropiedadController@filtros') }}" >
       {{ csrf_field() }}
             
                <div class="form-group">
@@ -19,7 +19,7 @@
             <div class="col-sm-10">
             <select class="form-control" name="ubicacion" >
                   <option value="Todas">Todas</option>
-                 <option value="Alajuela">Alajuela</option>
+                  <option value="Alajuela">Alajuela</option>
                   <option value="Sj">San Jose</option>
                   <option value="h">Heredia</option>
                   <option value="c">Cartago</option>

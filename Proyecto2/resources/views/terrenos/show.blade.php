@@ -31,7 +31,7 @@
 			<i>Precio</i>
 			<p><font size="5">${{ $propiedad->precio }}</font></p>
 
-	        <a href="#" class="btn btn-info">Obtener info por e-mail</a>
+	        <a href="{{ action('PropiedadController@send', $propiedad->id ) }}" class="btn btn-info">Obtener info por e-mail</a>
 			<a href="{{ route('propiedades.edit', $propiedad->id) }}" class="btn btn-warning">Editar</a>
 			<a href="{{ route('propiedades.destroy', $propiedad->id) }}" onclick="return confirm('¿Seguro que desea eliminar este elemento?')" class="btn btn-danger">Eliminar</a>
 		</div>
