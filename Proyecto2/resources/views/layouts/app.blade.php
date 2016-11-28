@@ -22,7 +22,7 @@
     </script>
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="background-color: transparent">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -102,6 +102,8 @@
                 @yield('content')
             </section>
         </div>
+
+        @yield('aside')
     </div>
 
     <!-- Scripts -->
