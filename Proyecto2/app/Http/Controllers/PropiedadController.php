@@ -33,8 +33,8 @@ class PropiedadController extends Controller
      // dd($request);
         $terrenos = Propiedad::all();
        // dd($terrenos);
-
-        return view('terrenos.filtro', ['terrenos' => $terrenos,'filtro'=>$request]);
+        $user=Auth::user()->type;
+        return view('terrenos.filtro', ['terrenos' => $terrenos,'filtro'=>$request, 'usuario'=>$user]);
     }
     /**
      * Show the form for creating a new resource.

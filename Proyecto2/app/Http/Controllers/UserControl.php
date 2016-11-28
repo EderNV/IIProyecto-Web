@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
+use Auth;
 
 class UserControl extends Controller
 {
@@ -23,8 +24,8 @@ public function __construct()
     {
 
         $Usuario= User::orderBy('id','ASC')->paginate(10);
-
-        return view ('usuarios/indexUser')->with('Usuario',$Usuario);
+         $user=Auth::user()->type;
+        return view ('usuarios/indexUser')->with(['Usuario'=>$Usuario, 'usuario'=>$user]);
     }
 
     /**

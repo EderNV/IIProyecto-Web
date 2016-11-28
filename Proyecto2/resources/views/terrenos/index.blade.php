@@ -1,4 +1,7 @@
-@extends('layouts.app')
+
+
+  @extends('layouts.app')
+
 
 @section('title', 'Propiedades')
  	
@@ -49,14 +52,14 @@
                     <div class="form-group">
                     <label class="col-sm-2 control-label" for="minarea">Área mínima <span>(m<sup>2</sup>)</span></label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="number" min="0" name="minarea"  placeholder="Cualquiera" title="Por favor solo proporcione digitos">
+                        <input class="form-control" type="number" min="0" name="minarea" value="0" placeholder="Cualquiera" title="Por favor solo proporcione digitos">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="maxarea">Área máxima <span>(m<sup>2</sup>)</span></label>
                     <div class="col-sm-10">
-                    <input class="form-control" type="number" min="0" name="maxarea"  placeholder="Cualquiera" title="Por favor solo proporcione digitos">
+                    <input class="form-control" type="number" min="0" name="maxarea" value="1000000000" placeholder="Cualquiera" title="Por favor solo proporcione digitos">
                     </div>
                 </div>
                 <div class="col-sm-offset-2 col-sm-10">
