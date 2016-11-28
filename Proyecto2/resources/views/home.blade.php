@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
-
+<style type="text/css">
+    .principal{
+        height: 560px;
+        background-color: transparent;
+    }
+</style>
+    
 @endsection
 
 @section('aside')

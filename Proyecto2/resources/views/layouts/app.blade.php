@@ -97,7 +97,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container principal">
             <section>
                 @yield('content')
             </section>

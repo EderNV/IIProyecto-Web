@@ -93,7 +93,7 @@
 
 
 	<div class="container">
-		<section>
+		<section class="principal">
 			@yield('content')
 		</section>
 	</div>
