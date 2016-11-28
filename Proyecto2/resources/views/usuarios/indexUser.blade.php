@@ -14,7 +14,9 @@
          <th>Nombre</th>
          <th>Correo</th>
          <th>Tipo</th>
+         @if($usuario=="admin")
           <th>Acciones</th>
+          @endif
 
        </thead>
        <tbody>
@@ -31,11 +33,13 @@
             @endif
          </td>
 
+         @if($usuario=="admin")
          <td>
            <a href="{{route('user.edit' ,$Usuario->id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
            <a href="{{route('admin.user.destroy' ,$Usuario->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
            
          </td>
+         @endif
 </tr>
          @endforeach
        </tbody>

@@ -46,6 +46,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Propiedades <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ route('propiedades.index') }}">Lista Propiedades</a></li>
+            
             <li><a href="{{ route('propiedades.create') }}">Insertar Propiedades</a></li>
             
           </ul>

@@ -19,7 +19,7 @@ Route::get('/contacto', function() {
 	return view('contacto');
 })->name('contacto');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'PropiedadController@index');
 
 
 

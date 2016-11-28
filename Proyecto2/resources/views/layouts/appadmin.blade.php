@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'BienesCR')</title>
+    <title>@yield('title', 'BienesCR2')</title>
 
     <!-- Styles -->
     <link rel="stylesheet"  href="{{ asset('boostrap/css/bootstrap.css') }}">
@@ -49,14 +49,15 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('user.index') }}">Lista de Usuarios</a></li>
-                                <li><a href="{{ route('user.create') }}">Nuevo Usuario</a></li>
+                                
+                                
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Propiedades <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('propiedades.index') }}">Lista de Bienes</a></li>
-                                <li><a href="{{ route('propiedades.create') }}">Nueva Venta</a></li>
+                                
                             </ul>
                         </li>
                         @endif
@@ -103,14 +104,6 @@
             </section>
         </div>
     </div>
-
-<footer class="centered footer">
-<hr>
-      <div class="col-md-6 col-md-offset-3">
-        <p class="centered text-muted">BienesCr 2016</p> <p class="text-muted">Eder Naranjo  --  Kevin Zamora</p>
-       
-      </div>
-    </footer>
 
     <!-- Scripts -->
     <!--<script src="/js/app.js"></script>-->
