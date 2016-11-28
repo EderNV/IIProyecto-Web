@@ -22,7 +22,8 @@ class PropiedadController extends Controller
         //$terrenos = Propiedad::orderBy('id', 'ASC')->paginate(1);
         //return view('terrenos.index')->with('terrenos', $terrenos);
         $terrenos = Propiedad::all();
-        return view('terrenos.index', ['terrenos' => $terrenos]);
+        $user=Auth::user()->type;
+        return view('terrenos.index', ['terrenos' => $terrenos, 'usuario'=>$user]);
     }
 
     

@@ -14,6 +14,38 @@
        
     </head>
     <body>
-        
+        <script type="text/javascript">
+function basebanco()
+{
+var request = require('request');
+var cheerio = require('cheerio');
+
+    request({url:'https://www.bnventadebienes.com/properties/index?ProvinceId=2&MustBeNegotiable=False&MustBeDiscounted=False&MustBeHighlighted=False&MustBeNovelty=False&MustBeInTheCoast=False&MustBeForDevelopers=False&pageNumber=2',encoding:'binary'}, function(err,resp,body){
+        if(!err&& resp.statusCode==200){
+           
+            var $= cheerio.load(body);
+            $('.site-secondary-bg-color5 .row .col-xs-7 ').each( function(){
+                var titulo= $(this).find('.row h3').html();
+                var precio= $(this).find('.price span').html();
+                var lugar2= $(this).find('.row .col-property-location h4');
+
+                
+
+               
+            });
+        }
+    });
+
+}
+</script>
+
+
+<form>
+<input type="button" 
+onclick="basebanco()" 
+value="Activar">
+</form>
+
+
     </body>
 </html>

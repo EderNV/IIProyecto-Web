@@ -83,11 +83,12 @@
           <h4><strong>$ {{ $terreno->precio }}</strong></h4>
 		      <hr></hr>
 		      
-          <a href="{{ route('propiedades.show', $terreno->id) }}" class="btn btn-primary">Ver info</a>
-		        
+          <a href="{{ route('propiedades.show', $terreno->id) }}" class="btn btn-primary">  Ver info</a>
+		       @if($usuario=="admin")
 				  <a href="{{ route('propiedades.edit', $terreno->id) }}" class="btn btn-warning">Editar</a>
 
 				  <a href="{{ route('propiedades.destroy', $terreno->id) }}" onclick="return confirm('¿Seguro que desea eliminar este elemento?')" class="btn btn-danger">Eliminar</a>
+          @endif
 			</div>
 		</div>
 	@endforeach

@@ -58,3 +58,6 @@ Route::resource('mail', 'MailController');
 
 Auth::routes();
 
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
+

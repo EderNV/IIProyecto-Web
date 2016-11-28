@@ -45,6 +45,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
+                        @if (!Auth::guest())
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('user.index') }}">Lista de Usuarios</a></li>
@@ -58,6 +59,7 @@
                                 <li><a href="{{ route('propiedades.create') }}">Nueva Venta</a></li>
                             </ul>
                         </li>
+                        @endif
                         <li>
                             <a href="{{ route('contacto') }}">Contáctenos</a>
                         </li>
